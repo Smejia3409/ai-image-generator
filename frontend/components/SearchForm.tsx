@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { FormContext } from "./FormContext";
 
 const SearchForm = () => {
   const [description, setDescription] = useState<string>("");
+  const { formContext, setFormContext } = useContext<any>(FormContext);
 
   const searchHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     alert(description);
+    setFormContext(description);
   };
 
   return (
