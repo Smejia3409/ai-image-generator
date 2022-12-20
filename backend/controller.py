@@ -1,11 +1,8 @@
 import os
 import openai
-import requests
 
+# gets api key from env variable
 openai.api_key = os.getenv("OPEN_AI_KEY")
-# print(openai.Model.list())
-
-
 
 def create_image(propmt):
     response = openai.Image.create(
@@ -15,6 +12,3 @@ def create_image(propmt):
     )
     image_url = response['data'][0]['url']
     return image_url
-
-print(create_image("a city on fire"))
-
