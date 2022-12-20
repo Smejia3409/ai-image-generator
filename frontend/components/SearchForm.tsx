@@ -1,16 +1,29 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FormContext } from "./FormContext";
+import axios, { Axios } from "axios";
 
 const SearchForm = () => {
   const [description, setDescription] = useState<string>("");
   const { formContext, setFormContext } = useContext<any>(FormContext);
 
+  const getImage = async (prompt: string) => {
+    const data = await axios.get(
+      `http://localhost:5000/getImage?prompt=${prompt}`
+    );
+
+    console.log(data.data);
+  };
+
   const searchHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     alert(description);
     setFormContext(description);
+    console.log(description);
+    getImage(description);
   };
+
+  useEffect(() => {}, [description]);
 
   return (
     <>
