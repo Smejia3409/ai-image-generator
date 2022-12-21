@@ -35,7 +35,7 @@ const SearchForm = () => {
 
   return (
     <>
-      <h3>A.I Image Search</h3>
+      <h3>A.I Image Generator</h3>
       <Form onSubmit={searchHandler}>
         <Form.Group className="mb-3" controlId="">
           <Form.Control

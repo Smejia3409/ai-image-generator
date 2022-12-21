@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Image Search</title>
-        <meta name="description" content="Open AI Image Seach" />
+        <title>AI Image Generator</title>
+        <meta name="description" content="Open AI Image generator" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
